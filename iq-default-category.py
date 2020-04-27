@@ -1,4 +1,4 @@
-
+#!/usr/bin/python3
 import requests
 
 iq_session = requests.Session()
@@ -10,6 +10,7 @@ add_tag = {}
 url = f'{iq_url}/api/v2/organizations'
 response = iq_session.get(url).json()
 orgs = response["organizations"]
+
 for org in orgs:
 	if org["id"] == "ROOT_ORGANIZATION_ID":
 		for tag in org["tags"]:
